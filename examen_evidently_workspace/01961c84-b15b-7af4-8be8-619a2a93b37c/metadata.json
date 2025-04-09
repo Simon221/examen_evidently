@@ -1,0 +1,17 @@
+{
+  "id": "01961c84-b15b-7af4-8be8-619a2a93b37c",
+  "name": "examen_bike_drift_week3",
+  "description": null,
+  "dashboard": {
+    "name": "examen_bike_drift_week3",
+    "panels": [],
+    "tabs": [],
+    "tab_id_to_panel_ids": {}
+  },
+  "team_id": null,
+  "org_id": null,
+  "date_from": null,
+  "date_to": null,
+  "created_at": "2025-04-09T21:46:20.379278",
+  "version": "1"
+}

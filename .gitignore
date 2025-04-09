@@ -1,0 +1,28 @@
+# Environnement virtuel
+venv/
+.env/
+
+# Fichiers Python inutiles
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers de logs
+*.log
+
+# Fichiers Jupyter
+.ipynb_checkpoints/
+
+# Config éditeurs
+.vscode/
+.idea/
+
+# Résultats ou fichiers temporaires
+*.sqlite3
+.DS_Store
+*.bak
+*.swp
+
+# Rapports Evidently HTML (optionnel)
+report_*.html
