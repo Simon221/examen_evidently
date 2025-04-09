@@ -62,7 +62,7 @@ def main():
     workspace = Workspace(WORKSPACE_DIR)
 
     # Chargement des données
-    raw_data = fetch_data()
+    raw_data = _fetch_data()
     jan_data = raw_data.loc['2011-01-01 00:00:00':'2011-01-28 23:00:00']
     feb_data = raw_data.loc['2011-01-29 00:00:00':'2011-02-28 23:00:00']
 

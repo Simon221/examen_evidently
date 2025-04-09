@@ -1,9 +1,9 @@
 {
-  "id": "01961c84-adab-7928-b451-5c1cf43d5d93",
-  "name": "examen_bike_drift_week2",
+  "id": "01961c9b-80d9-7d36-9290-aa36656e5b87",
+  "name": "examen_bike_drift_production",
   "description": null,
   "dashboard": {
-    "name": "examen_bike_drift_week2",
+    "name": "examen_bike_drift_production",
     "panels": [],
     "tabs": [],
     "tab_id_to_panel_ids": {}
@@ -12,6 +12,6 @@
   "org_id": null,
   "date_from": null,
   "date_to": null,
-  "created_at": "2025-04-09T21:46:19.435736",
+  "created_at": "2025-04-09T22:11:15.289645",
   "version": "1"
 }

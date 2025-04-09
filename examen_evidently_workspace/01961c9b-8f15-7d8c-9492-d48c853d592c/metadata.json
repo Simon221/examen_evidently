@@ -1,9 +1,9 @@
 {
-  "id": "01961c84-b826-7db8-979f-2d10f02bec0c",
-  "name": "examen_bike_drift_data_week3",
+  "id": "01961c9b-8f15-7d8c-9492-d48c853d592c",
+  "name": "examen_bike_drift_target_week3",
   "description": null,
   "dashboard": {
-    "name": "examen_bike_drift_data_week3",
+    "name": "examen_bike_drift_target_week3",
     "panels": [],
     "tabs": [],
     "tab_id_to_panel_ids": {}
@@ -12,6 +12,6 @@
   "org_id": null,
   "date_from": null,
   "date_to": null,
-  "created_at": "2025-04-09T21:46:22.118270",
+  "created_at": "2025-04-09T22:11:18.933270",
   "version": "1"
 }
