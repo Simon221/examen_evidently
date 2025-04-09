@@ -1,15 +1,19 @@
 
-# 📘 Analyse de dérive avec Evidently sur le Bike Sharing Dataset
+# 📘 Analyse de dérive avec Evidently sur le Bike Sharing Dataset / Examen Datascientest
 
-## ✅ Objectif du projet
+## Auteur : Simon Pierre DIOUF
+## Email : simonpierre.diouf@orange-sonatel.com
 
-Ce projet vise à entraîner un modèle de régression sur les données de location de vélos à Washington D.C. (Bike Sharing Dataset) en janvier 2011, puis à surveiller **les dérives de performance** et **les dérives de données** au fil du mois de février, à l'aide de la bibliothèque Evidently.
+
+## Objectif du projet
+
+Ce projet vise à entraîner un modèle de régression sur les données de location de vélos à Washington D.C. (Bike Sharing Dataset) en janvier 2011, puis à surveiller **les dérives de performance** et **les dérives de données** au fil du mois de février, et en utilisant les données de janv à l'aide de la bibliothèque Evidently.
 
 ---
 
-## 🧩 Questions d'analyse
+## Questions d'analyse
 
-### 🟠 1. Après l'étape 4, expliquez ce qui a changé au cours des semaines 1, 2 et 3.
+### 1. Après l'étape 4, expliquez ce qui a changé au cours des semaines 1, 2 et 3.
 
 Dans les **rapports hebdomadaires (week1, week2, week3)** générés à l’étape 4, on observe :
 
@@ -19,32 +23,23 @@ Dans les **rapports hebdomadaires (week1, week2, week3)** générés à l’éta
 
 - **Week 3 :** C’est là que la **performance chute fortement**. Le modèle sous-estime largement la demande. Les horaires d’utilisation changent, la météo est différente, et on note une augmentation importante du nombre moyen de locations par heure.
 
-**Conclusion :** Il y a une évolution progressive du comportement utilisateur, des conditions climatiques ou du calendrier (plus de jours actifs, météo plus clémente ?) au fil du mois de février, entraînant une perte de précision du modèle.
+**Donc :** Il y a une évolution progressive du comportement utilisateur, des conditions climatiques ou du calendrier (plus de jours actifs, météo plus clémente ?) au fil du mois de février, entraînant une perte de précision du modèle.
 
 ---
 
-### 🟠 2. Après l'étape 5, expliquez ce qui semble être la cause première de la dérive (uniquement à l'aide de données).
+### 2. Après l'étape 5, expliquez ce qui semble être la cause première de la dérive ?.
 
-Dans le rapport **`report_target_drift_week3.html`**, on constate :
+La distribution de la variable cible (cnt) en février, particulièrement en semaine 3, montre un décalage vers des valeurs plus élevées par rapport à janvier. Cela indique une augmentation générale de l'utilisation des vélos.
 
-- Une **dérive significative de la distribution de la cible `cnt`** entre janvier et la semaine 3 de février.
-- Le **nombre moyen de locations augmente fortement**, avec plus de pics de demande.
-- Cela correspond à un **changement réel de comportement utilisateur**, qui n’était pas représenté dans les données d’entraînement (janvier).
+En examinant les variables d'entrée, on constate que les variables météorologiques, en particulier temp et atemp (température réelle et température ressentie), montrent les changements les plus significatifs. Ces variables présentent une distribution différente en février par rapport à janvier, avec des valeurs généralement plus élevées.
 
-**Cause première de la dérive :**  
-👉 **Un changement de la demande** non capturé par les données de janvier.  
-👉 Ce changement est probablement dû à des **facteurs saisonniers ou comportementaux** (météo, vacances, événements locaux, retour au travail…).
+Le modèle a été entraîné sur des données de janvier, où la relation entre la température et l'utilisation des vélos correspondait à un modèle hivernal. En février, avec l'augmentation des températures, cette relation a évolué, entraînant une sous-estimation systématique de l'utilisation des vélos par le modèle.
 
+Selon moi, la cause première de la dérive semble être un changement saisonnier des conditions météorologiques (principalement la température) qui a modifié le comportement des utilisateurs de vélos d'une manière que le modèle, entraîné uniquement sur les données de janvier, n'était pas en mesure de prédire correctement.
 ---
 
-### 🟠 3. Après l'étape 6, expliquez quelle stratégie appliquer.
+### 3. Après l'étape 6, expliquez quelle stratégie appliquer.
 
-L’étape 6 analyse la **dérive des données d’entrée (features)**. Les variables comme :
-
-- `temp`, `atemp`, `hum` ont des distributions significativement différentes
-- `hr` (heure de la journée) et `workingday` changent aussi
-
-**Stratégies recommandées :**
 
 1. **Réalimenter le modèle avec des données plus récentes** :
    - Inclure février dans les données d'entraînement.
@@ -61,7 +56,7 @@ L’étape 6 analyse la **dérive des données d’entrée (features)**. Les var
 
 ---
 
-## 🚀 Lancer l’interface Evidently
+## Lancer l’interface Evidently
 
 ```bash
 evidently ui --workspace examen_evidently_workspace
