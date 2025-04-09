@@ -25,4 +25,4 @@ __pycache__/
 *.swp
 
 # Rapports Evidently HTML (optionnel)
-report_*.html
+#report_*.html
